@@ -30,122 +30,7 @@
       "style": "scss"
     }
   },
-  "defaultProject": "demo-app",
   "projects": {
-    "demo-app": {
-      "projectType": "application",
-      "root": "apps/demo-app",
-      "sourceRoot": "apps/demo-app/src",
-      "prefix": "flight-workspace",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/demo-app",
-            "index": "apps/demo-app/src/index.html",
-            "main": "apps/demo-app/src/main.ts",
-            "polyfills": "apps/demo-app/src/polyfills.ts",
-            "tsConfig": "apps/demo-app/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "apps/demo-app/src/favicon.ico",
-              "apps/demo-app/src/assets"
-            ],
-            "styles": ["apps/demo-app/src/styles.scss"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/demo-app/src/environments/environment.ts",
-                  "with": "apps/demo-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "demo-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "demo-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "demo-app:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/demo-app/src/**/*.ts",
-              "apps/demo-app/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/demo-app"],
-          "options": {
-            "jestConfig": "apps/demo-app/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "demo-app-e2e": {
-      "root": "apps/demo-app-e2e",
-      "sourceRoot": "apps/demo-app-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/demo-app-e2e/cypress.json",
-            "tsConfig": "apps/demo-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "demo-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/demo-app-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
     "booking-domain": {
       "projectType": "library",
       "root": "libs/booking/domain",
@@ -271,32 +156,6 @@
         }
       }
     },
-    "booking-e2e": {
-      "root": "apps/booking-e2e",
-      "sourceRoot": "apps/booking-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/booking-e2e/cypress.json",
-            "tsConfig": "apps/booking-e2e/tsconfig.e2e.json",
-            "devServerTarget": "booking:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "booking:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/booking-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
     "booking-feature-search": {
       "projectType": "library",
       "root": "libs/booking/feature-search",
@@ -366,43 +225,6 @@
           "outputs": ["coverage/libs/booking/feature-checkout"],
           "options": {
             "jestConfig": "libs/booking/feature-checkout/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "booking-feature-account": {
-      "projectType": "library",
-      "root": "libs/booking/feature-account",
-      "sourceRoot": "libs/booking/feature-account/src",
-      "prefix": "booking",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/booking/feature-account/tsconfig.lib.json",
-            "project": "libs/booking/feature-account/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/booking/feature-account/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/booking/feature-account/src/**/*.ts",
-              "libs/booking/feature-account/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/booking/feature-account"],
-          "options": {
-            "jestConfig": "libs/booking/feature-account/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -529,32 +351,6 @@
           "options": {
             "jestConfig": "apps/boarding/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "boarding-e2e": {
-      "root": "apps/boarding-e2e",
-      "sourceRoot": "apps/boarding-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/boarding-e2e/cypress.json",
-            "tsConfig": "apps/boarding-e2e/tsconfig.e2e.json",
-            "devServerTarget": "boarding:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "boarding:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/boarding-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -717,32 +513,6 @@
           "options": {
             "jestConfig": "apps/luggage/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "luggage-e2e": {
-      "root": "apps/luggage-e2e",
-      "sourceRoot": "apps/luggage-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/luggage-e2e/cypress.json",
-            "tsConfig": "apps/luggage-e2e/tsconfig.e2e.json",
-            "devServerTarget": "luggage:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "luggage:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/luggage-e2e/**/*.{js,ts}"]
           }
         }
       }

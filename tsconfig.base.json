@@ -22,9 +22,6 @@
       "@flight-workspace/booking/feature-checkout": [
         "libs/booking/feature-checkout/src/index.ts"
       ],
-      "@flight-workspace/booking/feature-account": [
-        "libs/booking/feature-account/src/index.ts"
-      ],
       "@flight-workspace/boarding/domain": [
         "libs/boarding/domain/src/index.ts"
       ],
