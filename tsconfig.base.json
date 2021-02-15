@@ -14,7 +14,37 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@flight-workspace/booking/domain": ["libs/booking/domain/src/index.ts"],
+      "@flight-workspace/booking/feature-search": [
+        "libs/booking/feature-search/src/index.ts"
+      ],
+      "@flight-workspace/booking/feature-checkout": [
+        "libs/booking/feature-checkout/src/index.ts"
+      ],
+      "@flight-workspace/booking/feature-account": [
+        "libs/booking/feature-account/src/index.ts"
+      ],
+      "@flight-workspace/boarding/domain": [
+        "libs/boarding/domain/src/index.ts"
+      ],
+      "@flight-workspace/boarding/feature-manage": [
+        "libs/boarding/feature-manage/src/index.ts"
+      ],
+      "@flight-workspace/luggage/domain": ["libs/luggage/domain/src/index.ts"],
+      "@flight-workspace/luggage/feature-checkin": [
+        "libs/luggage/feature-checkin/src/index.ts"
+      ],
+      "@flight-workspace/luggage/feature-report-loss": [
+        "libs/luggage/feature-report-loss/src/index.ts"
+      ],
+      "@flight-workspace/shared/util-auth": [
+        "libs/shared/util-auth/src/index.ts"
+      ],
+      "@flight-workspace/shared/util-logger": [
+        "libs/shared/util-logger/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

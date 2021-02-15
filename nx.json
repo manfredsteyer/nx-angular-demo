@@ -17,6 +17,25 @@
   },
   "projects": {
     "demo-app": { "tags": [] },
-    "demo-app-e2e": { "tags": [], "implicitDependencies": ["demo-app"] }
+    "demo-app-e2e": { "tags": [], "implicitDependencies": ["demo-app"] },
+    "booking-domain": { "tags": ["domain:booking", "type:domain-logic"] },
+    "booking": { "tags": ["domain:booking", "type:app"] },
+    "booking-e2e": { "tags": [], "implicitDependencies": ["booking"] },
+    "booking-feature-search": { "tags": ["domain:booking", "type:feature"] },
+    "booking-feature-checkout": { "tags": ["domain:booking", "type:feature"] },
+    "booking-feature-account": { "tags": ["domain:booking", "type:feature"] },
+    "boarding-domain": { "tags": ["domain:boarding", "type:domain-logic"] },
+    "boarding": { "tags": ["domain:boarding", "type:app"] },
+    "boarding-e2e": { "tags": [], "implicitDependencies": ["boarding"] },
+    "boarding-feature-manage": { "tags": ["domain:boarding", "type:feature"] },
+    "luggage-domain": { "tags": ["domain:luggage", "type:domain-logic"] },
+    "luggage": { "tags": ["domain:luggage", "type:app"] },
+    "luggage-e2e": { "tags": [], "implicitDependencies": ["luggage"] },
+    "luggage-feature-checkin": { "tags": ["domain:luggage", "type:feature"] },
+    "luggage-feature-report-loss": {
+      "tags": ["domain:luggage", "type:feature"]
+    },
+    "shared-util-auth": { "tags": ["domain:shared", "type:util"] },
+    "shared-util-logger": { "tags": ["domain:shared", "type:util"] }
   }
 }
