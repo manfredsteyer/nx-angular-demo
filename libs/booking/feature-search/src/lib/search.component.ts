@@ -8,9 +8,7 @@ import { SearchFacade } from '@flight-workspace/booking/domain';
 })
 export class SearchComponent implements OnInit {
     
-    
     flightList$ = this.searchFacade.flightList$;
-
 
     constructor(private searchFacade: SearchFacade) {
     }
