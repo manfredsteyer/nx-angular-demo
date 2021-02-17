@@ -1,7 +1,7 @@
 {
   "npmScope": "flight-workspace",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "angular.json": "*",
@@ -14,27 +14,28 @@
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": [
+          "build", "lint", "test", "e2e"
+        ],
         "--cacheDirectory": "c:\\temp\\cache"
       }
     }
   },
-  
   "--tasksRunnerOptions": {
     "default": {
       "runner": "./tools/task-runners/custom-task-runner",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": [
+          "build", "lint", "test", "e2e"
+        ],
         "remoteDirectory": "c:\\temp\\remote-cache"
       }
     }
   },
-
   "projects": {
     "booking-domain": {
       "tags": [
@@ -43,10 +44,16 @@
       ]
     },
     "booking": {
-      "tags": ["domain:booking", "type:app"]
+      "tags": [
+        "domain:booking",
+        "type:app"
+      ]
     },
     "booking-feature-search": {
-      "tags": ["domain:booking", "type:feature"]
+      "tags": [
+        "domain:booking",
+        "type:feature"
+      ]
     },
     "booking-feature-checkout": {
       "tags": [

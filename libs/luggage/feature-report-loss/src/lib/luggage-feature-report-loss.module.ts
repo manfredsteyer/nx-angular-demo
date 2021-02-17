@@ -9,3 +9,4 @@ import { ReportLossComponent } from './report-loss.component';
   exports: [ReportLossComponent],
 })
 export class LuggageFeatureReportLossModule {}
+
