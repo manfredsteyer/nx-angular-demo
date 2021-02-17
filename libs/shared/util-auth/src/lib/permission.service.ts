@@ -7,10 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class PermissionService {
 
-  constructor() { }
-
   hasPermission(permission: string): Observable<boolean> {
-    return timer(3000).pipe(map(_ => false));
+    return timer(4000).pipe(map(_ => false));
   }
 
 }
