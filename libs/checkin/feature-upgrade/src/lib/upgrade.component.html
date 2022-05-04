@@ -1,0 +1,10 @@
+<h1>checkin-upgrade</h1>
+
+<table class="table">
+  <tr *ngFor="let passenger of passengerList$ | async">
+    <td>{{passenger.id}}</td>
+    <td>{{passenger.name}}</td>
+    <td>{{passenger.description}}</td>
+  </tr>
+</table>
+
